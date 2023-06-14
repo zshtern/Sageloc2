@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.child-home.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  [Dev Note] This page is shown on child device.
+  <ion-list>
+    <ion-list-header>Parents</ion-list-header>
+
+    <ion-item *ngFor="let parent of parents; index as i">
+      #{{i}} {{parent.name}}
+    </ion-item>
+
+    <ion-item *ngIf="parents.length === 0">
+      No Added Parents
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>Account</ion-list-header>
+    <ion-item>
+      Name: {{profile?.name}}<br>
+      Email: {{profile?.email}}
+    </ion-item>
+    <button ion-item (click)="openAddParent()">
+      Add Parent
+    </button>
+    <button ion-item (click)="logout()">
+      Logout
+    </button>
+  </ion-list>
+</ion-content>

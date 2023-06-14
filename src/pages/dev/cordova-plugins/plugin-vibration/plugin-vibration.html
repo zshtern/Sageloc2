@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Plugin - Vibration</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item text-wrap>
+      This plugin is supported both on Android and iOS. For more details see:
+      <a href="https://www.npmjs.com/package/cordova-plugin-vibration">npm</a>
+      <a href="https://github.com/apache/cordova-plugin-vibration" target="_blank">Ionic Native</a>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="primary" (click)="vibrate()">
+    Vibrate
+  </button>
+  <ion-list>
+    <ion-list-header>
+      Log
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let message of messages">{{message}}</ion-item>
+  </ion-list>
+</ion-content>

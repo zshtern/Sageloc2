@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Plugin - Step Counter</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item text-wrap>
+      This plugin is supported just on Android. For more details see:
+      <a href="https://www.npmjs.com/package/cordova-plugin-stepcounter">npm</a>
+      <a href="https://ionicframework.com/docs/v3/native/stepcounter/" target="_blank">Ionic Native</a>
+    </ion-item>
+    <ion-item-divider>Parameters</ion-item-divider>
+    <ion-item>Supported: {{isSupported}}</ion-item>
+    <ion-item>Status: {{isRunning ? 'running' : 'stopped'}}</ion-item>
+    <ion-item>Steps: {{stepCount}}</ion-item>
+    <ion-item-divider>Settings</ion-item-divider>
+    <ion-item>
+      <ion-label>Period:</ion-label>
+      <ion-input type="number" [value]="settings.period" (change)="setPeriod($event.target.value)"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="primary" (click)="startCount()" [disabled]="!isSupported || isRunning">
+    Start
+  </button>
+  <button ion-button full color="primary" (click)="stopCount()" [disabled]="!isSupported || !isRunning">
+    Stop
+  </button>
+  <button ion-button full color="primary" (click)="resetStepCount()" [disabled]="!isSupported || stepCount > 0">
+    Reset
+  </button>
+  <button ion-button full color="primary" (click)="getTodayStepCount()" [disabled]="!isSupported">
+    Today
+  </button>
+  <button ion-button full color="primary" (click)="getHistory()" [disabled]="!isSupported">
+    History
+  </button>
+  <ion-list>
+    <ion-list-header>
+      Log
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let message of messages">{{message}}</ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'page.title.dev' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button block (click)="startTracking()">start</button>
+  <button ion-button block (click)="stopTracking()">stop</button>
+  <button ion-button block (click)="startStepCounter()">startStep</button>
+  <button ion-button block (click)="stopStepCounter()">stopStep</button>
+  <button ion-button block (click)="getStepCount()">getSteps</button>
+  <button ion-button block (click)="startLocationsTesting()">startLocations</button>
+  <button ion-button block (click)="stopLocationsTesting()">stopLocations</button>
+  <button ion-button block (click)="addLog()">addLog</button>
+
+  <div>
+    travelStatus : {{travelStatus}}
+  </div>
+
+  <div>
+    steps : {{steps}}
+  </div>
+
+  <div id="map_canvas" style="width: 100%;"></div>
+
+  <ion-list>
+    <ion-item *ngFor="let pos of log">
+      <div style="font-size: 11px">
+        {{pos.x}} - {{pos.y}} - {{pos.date}}
+      </div>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

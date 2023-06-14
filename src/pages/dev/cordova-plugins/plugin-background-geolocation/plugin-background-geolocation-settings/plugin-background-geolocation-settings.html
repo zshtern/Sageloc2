@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        Close
+      </button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Location Provider</ion-label>
+      <ion-select [(ngModel)]="settings.locationProvider">
+        <ion-option value="0">DISTANCE_FILTER_PROVIDER</ion-option>
+        <ion-option value="1">ACTIVITY_PROVIDER</ion-option>
+        <ion-option value="2">RAW_PROVIDER</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Desired Accuracy (m)</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.desiredAccuracy" placeholder="Accuracy in meters"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Stationary Radius (m)</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.stationaryRadius" placeholder="Radius in meters"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Debug</ion-label>
+      <ion-toggle [(ngModel)]="settings.debug"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Distance Filter (m)</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.distanceFilter" placeholder="Distance in meters"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Stop on Terminate</ion-label>
+      <ion-toggle [(ngModel)]="settings.stopOnTerminate"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start on Boot</ion-label>
+      <ion-toggle [(ngModel)]="settings.startOnBoot"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Interval (s)</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.interval" placeholder="Interval in seconds"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fastest Interval (s)</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.fastestInterval" placeholder="Interval in seconds"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Activities Interval (s)</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.activitiesInterval" placeholder="Interval in seconds"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Stop on Still Activity</ion-label>
+      <ion-toggle [(ngModel)]="settings.stopOnStillActivity"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notifications Enabled</ion-label>
+      <ion-toggle [(ngModel)]="settings.notificationsEnabled"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start Foreground</ion-label>
+      <ion-toggle [(ngModel)]="settings.startForeground"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notification Title</ion-label>
+      <ion-input type="text" [(ngModel)]="settings.notificationTitle" placeholder="Title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Notification Text</ion-label>
+      <ion-input type="text" [(ngModel)]="settings.notificationText" placeholder="Text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Activity Type</ion-label>
+      <ion-select [(ngModel)]="settings.activityType">
+        <ion-option value="AutomotiveNavigation">Automotive Navigation</ion-option>
+        <ion-option value="OtherNavigation">Other Navigation</ion-option>
+        <ion-option value="Fitness">Fitness</ion-option>
+        <ion-option value="Other">Other</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pause Location Updates</ion-label>
+      <ion-toggle [(ngModel)]="settings.pauseLocationUpdates"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Save Battery on Background</ion-label>
+      <ion-toggle [(ngModel)]="settings.saveBatteryOnBackground"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Maximum Stored Locations</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.maxLocations" placeholder="Amount of locations"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>URL</ion-label>
+      <ion-input type="text" [(ngModel)]="settings.url" placeholder="Text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>URL Sync</ion-label>
+      <ion-input type="text" [(ngModel)]="settings.syncUrl" placeholder="Text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sync Threshold</ion-label>
+      <ion-input type="number" [(ngModel)]="settings.syncThreshold" placeholder="Amount of locations"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>HTTP Headers</ion-label>
+      <ion-input type="text" [(ngModel)]="settings.httpHeaders" placeholder="Headers in JSON"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>POST Template</ion-label>
+      <ion-input type="text" [(ngModel)]="settings.postTemplate" placeholder="Template in JSON"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

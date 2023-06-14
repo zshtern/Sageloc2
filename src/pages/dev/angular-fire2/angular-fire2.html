@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>AngularFire2</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Angular FireStore</h1>
+  <ul>
+    <li *ngFor="let item of fsItems">
+      {{ item.name }}
+    </li>
+  </ul>
+
+  <h1>Angular FireDatabase</h1>
+  <ul>
+    <li *ngFor="let item of fdbItems">
+      {{ item.name }}
+    </li>
+  </ul>
+</ion-content>

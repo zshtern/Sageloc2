@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Plugin - Device Motion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item text-wrap>
+      For more details see:
+      <a href="https://github.com/apache/cordova-plugin-device-motion" target="_blank">npm</a>
+      <a href="https://ionicframework.com/docs/v3/native/device-motion/" target="_blank">Ionic Native</a>
+    </ion-item>
+    <ion-item-divider>Parameters</ion-item-divider>
+    <ion-item>Supported: {{isAvailable}}</ion-item>
+    <ion-item>Status: {{isRunning ? 'running' : 'stopped'}}</ion-item>
+    <ion-item>X: {{data.x}}</ion-item>
+    <ion-item>Y: {{data.y}}</ion-item>
+    <ion-item>Z: {{data.z}}</ion-item>
+    <ion-item>Timestamp: {{data.timestamp}}</ion-item>
+    <ion-item-divider>Settings</ion-item-divider>
+    <ion-item>
+      <ion-label>Frequency:</ion-label>
+      <ion-input type="number" [value]="settings.period" (change)="setPeriod($event.target.value)"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="primary" (click)="startWatching()" [disabled]="!isAvailable || isRunning">
+    Start Counting
+  </button>
+  <button ion-button full color="primary" (click)="stopWatching()" [disabled]="!isAvailable || !isRunning">
+    Stop Counting
+  </button>
+  <button ion-button full color="primary" (click)="getCurrentAcceleration()" [disabled]="!isAvailable">
+    Get Current Acceleration
+  </button>
+  <ion-list>
+    <ion-list-header>
+      Log
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let message of messages">{{message}}</ion-item>
+  </ion-list>
+</ion-content>

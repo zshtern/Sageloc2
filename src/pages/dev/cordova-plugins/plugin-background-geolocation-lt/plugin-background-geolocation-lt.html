@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>(3) Plugin - Background Geolocation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item text-wrap>
+      For more details see:
+      <a href="https://www.npmjs.com/package/cordova-background-geolocation-lt" target="_blank">npm</a>
+      <a href="https://github.com/transistorsoft/cordova-background-geolocation-lt" target="_blank">Github</a>
+    </ion-item>
+    <ion-item-divider>Parameters</ion-item-divider>
+    <ion-item>Supported: {{isAvailable}}</ion-item>
+    <ion-item>Status: {{isRunning ? 'running' : 'stopped'}}</ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block icon-start color="primary" (click)="presentSettingsModal()">
+          <ion-icon name="gear"></ion-icon>
+          Settings
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="sendEmail()">
+          Send Log via Email
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="resetConfiguration()" [disabled]="!isAvailable">
+          Reset Configuration
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="start()" [disabled]="!isAvailable || isRunning">
+          Start
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="stop()" [disabled]="!isAvailable || !isRunning">
+          Stop
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="setBackground()" [disabled]="!isAvailable">
+          Move to Background
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="setForeground()" [disabled]="!isAvailable">
+          Move to Foreground
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="showAppSettings()" [disabled]="!isAvailable">
+          App Settings
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="showLocationSettings()" [disabled]="!isAvailable">
+          Location Settings
+        </button>
+      </ion-col>
+    </ion-row>
+    <!--<ion-row>-->
+      <!--<ion-col>-->
+      <!--</ion-col>-->
+      <!--<ion-col>-->
+      <!--</ion-col>-->
+    <!--</ion-row>-->
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="switchLog()">
+          Switch Logs
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list *ngIf="selectedLog === 'sageloc'">
+    <ion-list-header>
+      Sageloc Log
+      <button ion-button item-end (click)="clearSagelocLog()">Clear</button>
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let sagelocLogRecord of sagelocLog">{{sagelocLogRecord}}</ion-item>
+  </ion-list>
+  <ion-list *ngIf="selectedLog === 'plugin'">
+    <ion-list-header>
+      Plugin Log
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let pluginLogRecord of pluginLog">{{pluginLogRecord}}</ion-item>
+  </ion-list>
+</ion-content>

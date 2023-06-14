@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Web - Device Motion</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item text-wrap>
+      For more details see:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/DeviceMotionEvent" target="_blank">MDN</a>
+    </ion-item>
+    <ion-item-divider>Parameters</ion-item-divider>
+    <ion-item>Device Motion Supported: {{isDeviceMotionAvailable}}</ion-item>
+    <ion-item>Device Orientation Supported: {{isDeviceOrientationAvailable}}</ion-item>
+    <ion-item>Status: {{isRunning ? 'running' : 'stopped'}}</ion-item>
+    <ion-item>
+      Acceleration X: {{motion.acceleration.x}}
+    </ion-item>
+    <ion-item>
+      Acceleration Y: {{motion.acceleration.y}}
+    </ion-item>
+    <ion-item>
+      Acceleration Z: {{motion.acceleration.z}}
+    </ion-item>
+    <ion-item>
+      Acceleration + Gravity X: {{motion.accelerationIncludingGravity.x}},
+    </ion-item>
+    <ion-item>
+      Acceleration + Gravity Y: {{motion.accelerationIncludingGravity.y}},
+    </ion-item>
+    <ion-item>
+      Acceleration + Gravity Z: {{motion.accelerationIncludingGravity.z}},
+    </ion-item>
+    <ion-item>
+      Rotation Rate Alpha: {{motion.rotationRate.alpha}}
+    </ion-item>
+    <ion-item>
+      Rotation Rate Beta: {{motion.rotationRate.beta}}
+    </ion-item>
+    <ion-item>
+      Rotation Rate Gamma: {{motion.rotationRate.gamma}}
+    </ion-item>
+    <ion-item>
+      Interval: {{motion.interval}}
+    </ion-item>
+    <ion-item>
+      Orientation Alpha: {{orientation.alpha}}
+    </ion-item>
+    <ion-item>
+      Orientation Beta: {{orientation.beta}}
+    </ion-item>
+    <ion-item>
+      Orientation Gamma: {{orientation.gamma}}
+    </ion-item>
+    <ion-item-divider>Settings</ion-item-divider>
+  </ion-list>
+  <button ion-button full color="primary" (click)="startListening()" [disabled]="isRunning">
+    Start Listening
+  </button>
+  <button ion-button full color="primary" (click)="stopListening()" [disabled]="!isRunning">
+    Stop Listening
+  </button>
+  <ion-list>
+    <ion-list-header>
+      Log
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let message of messages">{{message}}</ion-item>
+  </ion-list>
+</ion-content>

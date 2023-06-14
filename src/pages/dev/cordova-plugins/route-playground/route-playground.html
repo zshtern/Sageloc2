@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="openPluginLog()">
+        Open Log
+      </button>
+    </ion-buttons>
+    <ion-title>Route Playground</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item>
+      Supported: L - {{isLocationAvailable}}, S - {{isStepAvailable}}
+    </ion-item>
+    <ion-item>
+      Status:
+      L - {{isLocationRunning ? 'running' : 'stopped'}},
+      S - {{isStepRunning ? 'running' : 'stopped'}}
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="start()" [disabled]="!isLocationAvailable || isLocationRunning">
+          Start Sensors
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="stop()" [disabled]="!isLocationAvailable || !isLocationRunning">
+          Stop Sensors
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="beginPath()" [disabled]="!isLocationRunning || isPathDefining || isPathFollowing">
+          Begin Path
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="endPath()" [disabled]="!isLocationRunning || !isPathDefining">
+          End Path
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block color="primary" (click)="followPath()" [disabled]="!isLocationRunning || isPathDefining || isPathFollowing">
+          Follow Path
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block color="primary" (click)="deletePath()" [disabled]="true">
+          Delete Path
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="background-color: red;" class="map-container">
+    <div leaflet style="height: 300px;"
+         [leafletCenter]="mapCenter"
+         (leafletMapReady)="onMapReady($event)"
+         [leafletOptions]="mapOptions"></div>
+  </div>
+  <ion-list>
+    <ion-list-header>
+      Log (L:{{nLocation}} S:{{nStationary}})
+      <button ion-button item-end (click)="clearLog()">Clear</button>
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let message of messages">{{message}}</ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Plugin - Pedometer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Information
+    </ion-list-header>
+    <ion-item text-wrap>
+      This plugin is supported both on Android and iOS. For more details see:
+      <a href="https://github.com/leecrossley/cordova-plugin-pedometer" target="_blank">npm</a>
+      <a href="https://ionicframework.com/docs/v3/native/pedometer/" target="_blank">Ionic Native</a>
+    </ion-item>
+    <ion-item-divider>Parameters</ion-item-divider>
+    <ion-item>Step counting supported: {{isStepCountingAvailable}}</ion-item>
+    <ion-item>Distance supported: {{isDistanceAvailable}}</ion-item>
+    <ion-item>Floor counting supported: {{isFloorCountingAvailable}}</ion-item>
+    <ion-item>Number of steps: {{data.numberOfSteps}}</ion-item>
+    <ion-item>Distance: {{data.distance}}</ion-item>
+    <ion-item>Floors ascended: {{data.floorsAscended}}</ion-item>
+    <ion-item>Floors descended: {{data.floorsDescended}}</ion-item>
+    <ion-item-divider>Settings</ion-item-divider>
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="settings.startDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>End Date</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="settings.endDate"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="primary" (click)="startCounting()" [disabled]="!isStepCountingAvailable || isRunning">
+    Start Counting
+  </button>
+  <button ion-button full color="primary" (click)="stopCounting()" [disabled]="!isStepCountingAvailable || !isRunning">
+    Stop Counting
+  </button>
+  <button ion-button full color="primary" (click)="queryHistoricalData()" [disabled]="!isStepCountingAvailable">
+    Query Historical Data
+  </button>
+  <ion-list>
+    <ion-list-header>
+      Log
+    </ion-list-header>
+    <ion-item text-wrap *ngFor="let message of messages">{{message}}</ion-item>
+  </ion-list>
+</ion-content>

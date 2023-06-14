@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.child-location.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid padding class="full-height">
+    <ion-row>
+      <ion-col text-center>
+        <ion-img width="180" height="180" src="assets/img/logo.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="dev-note">
+        Dev Note: On this page child should connect his parent account.
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{ 'page.child-location.text' | translate }}
+      </ion-col>
+    </ion-row>
+    <ion-row class="last-row">
+      <ion-col>
+        <button ion-button block (click)="next()">{{ 'button.next' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button (click)="closeView()">
+        Close
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'page.add-child.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid padding class="full-height">
+    <ion-row>
+      <ion-col text-center>
+        <ion-img width="180" height="180" src="assets/img/logo.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Code entering explanation  -->
+        {{ 'page.add-child.enter-code' | translate }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Code input  -->
+        <ion-input placeholder="{{ 'text.enter-code' | translate }}" [(ngModel)]="childCode"
+                   (input)='onInputCode($event.target.value)'></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Code sharing explanation  -->
+        {{ 'page.add-child.share-code' | translate }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Code to share -->
+        {{parentCode.code}} {{getTimeRemain()}}
+        <button [hidden]="!isLoaded" ion-button small color="light" (click)="copyCode()">Copy</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Open code sharing options -->
+        <button ion-button block color="primary" [disabled]="true" (click)="shareCode()">
+          {{ 'button.share-code' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="last-row">
+      <ion-col *ngIf="isSkippable" col-12 col-sm-6>
+        <!-- Skip button -->
+        <button ion-button block color="light" (click)="skipCode()">{{ 'button.skip' | translate }}</button>
+      </ion-col>
+      <ion-col col-12 col-sm-6>
+        <!-- Next button -->
+        <button ion-button block [disabled]="!isReady" (click)="approveCode()">{{ 'button.next' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
