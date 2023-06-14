@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "593470457740",
+    "firebase_url": "https://sageloc-70f8e.firebaseio.com",
+    "project_id": "sageloc-70f8e",
+    "storage_bucket": "sageloc-70f8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593470457740:android:f8f0a411c518e6d2",
+        "android_client_info": {
+          "package_name": "com.sageloc.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593470457740-n5jkpak7sd77ubltit8ul1nstjt4o29j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sageloc.app",
+            "certificate_hash": "665f5a39386bce8b297c71e18fbc4e600de5d53a"
+          }
+        },
+        {
+          "client_id": "593470457740-d0duqdoali2amf8a1g0u9puhtsgmn2pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9hxB2ydxHt5UicKNmO-GdxG5msRJYNBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593470457740-d0duqdoali2amf8a1g0u9puhtsgmn2pa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "593470457740-0g0399pbodm322igvo5n4iniap982rhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sageloc.app",
+                "app_store_id": "1474860188"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

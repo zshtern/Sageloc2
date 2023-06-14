@@ -1,0 +1,9 @@
+{
+  "name": "Sageloc",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [],
+  "id": "556419f6"
+}
