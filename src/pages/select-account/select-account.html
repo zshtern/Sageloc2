@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.select-account.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="full-height">
+    <ion-row>
+      <ion-col text-center>
+        <ion-img width="180" height="180" src="assets/img/logo.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <!-- Account selection explanation -->
+        {{ 'page.select-account.text' | translate }}<br>
+        <!-- Developer information -->
+        [User name: {{user?.displayName}}]<br>
+        [User email: {{user?.email}}]
+      </ion-col>
+    </ion-row>
+    <ion-row class="last-row">
+      <ion-col col-12 col-sm-6>
+        <!-- Select parent account -->
+        <button ion-button block (click)="selectParentAccount()">{{ 'text.parent' | translate }}</button>
+      </ion-col>
+      <ion-col col-12 col-sm-6>
+        <!-- Select child account -->
+        <button ion-button block (click)="selectChildAccount()">{{ 'text.child' | translate }}</button>
+      </ion-col>
+      <ion-col col-12>
+        <!-- Logout -->
+        <button ion-button block color="light" (click)="logout()">{{ 'button.logout' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

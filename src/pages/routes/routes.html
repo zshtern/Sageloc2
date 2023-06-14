@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-left (click)="openAddRoute()">
+        <ion-icon name="plus"></ion-icon>{{ 'button.add-route' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'page.routes.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1 text-center *ngIf="routes.length === 0">{{ 'text.no-routes' | translate }}</h1>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 col-lg-4 col-xl-2 *ngFor="let route of routes">
+        <ion-card>
+          <div style="position: relative">
+            <img src="assets/img/background.jpeg">
+            <ion-fab right top>
+              <button ion-fab>
+                <ion-icon name="pin"></ion-icon>
+              </button>
+            </ion-fab>
+          </div>
+          <ion-item>
+            <h2 text-center>{{route.name}}</h2>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="home" item-start large></ion-icon>
+            <h2>{{route.origin.name}}</h2>
+            <p>{{route.origin.address}}</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="flag" item-start large></ion-icon>
+            <h2>{{route.destination.name}}</h2>
+            <p>{{route.origin.address}}</p>
+          </ion-item>
+
+          <ion-item>
+            <span item-start>{{route.duration}}</span>
+            <span item-start>({{route.distance}})</span>
+            <button ion-button icon-start clear item-end>
+              <ion-icon name="compass"></ion-icon>
+              Open
+            </button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-12 col-md-6 col-lg-4 col-xl-2 *ngIf="routes.length === 0">
+        <ion-card>
+          <div style="position: relative">
+            <img src="assets/img/background.jpeg">
+            <ion-fab right top>
+              <button ion-fab>
+                <ion-icon name="pin"></ion-icon>
+              </button>
+            </ion-fab>
+          </div>
+          <ion-item>
+            <h2 text-center>{{demoRoute.name}}</h2>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="home" item-start large></ion-icon>
+            <h2>{{demoRoute.origin.name}}</h2>
+            <p>{{demoRoute.origin.address}}</p>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="flag" item-start large></ion-icon>
+            <h2>{{demoRoute.destination.name}}</h2>
+            <p>{{demoRoute.origin.address}}</p>
+          </ion-item>
+
+          <ion-item>
+            <span item-start>{{demoRoute.duration}}</span>
+            <span item-start>({{demoRoute.distance}})</span>
+            <button ion-button icon-start clear item-end>
+              <ion-icon name="compass"></ion-icon>
+              Open
+            </button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

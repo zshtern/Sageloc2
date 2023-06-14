@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.welcome.title' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button round icon-end (click)="openLanguageSelector($event)">
+        {{ currentLanguage.id | translate }}
+        <ion-icon name="globe"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid padding class="full-height">
+    <ion-row padding-top class="logo">
+      <ion-col text-center align-self-center>
+        <img src="assets/img/icon.svg">
+      </ion-col>
+    </ion-row>
+    <ion-row padding-top>
+      <ion-col text-center align-self-center>
+        <h2>{{ 'page.welcome.header' | translate }}</h2>
+        <h6>{{ 'page.welcome.text' | translate }}</h6>
+      </ion-col>
+    </ion-row>
+    <ion-row padding-top>
+      <ion-col text-center align-self-center>
+        <button ion-button block (click)="next()">{{ 'button.next' | translate }}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

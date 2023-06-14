@@ -1,0 +1,153 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.settings.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-list>
+    <ion-list-header>
+      {{ 'text.account' | translate }}
+    </ion-list-header>
+
+    <ion-item>
+      <h2>{{ 'text.name' | translate }}: {{userProfile?.name}}</h2>
+      <h3>{{ 'text.email' | translate }}: {{userProfile?.email}}</h3>
+    </ion-item>
+
+    <ion-item>
+      <h2>[Dev] Authorization</h2>
+      <h2>Name: {{user?.displayName}}</h2>
+      <h3>Email: {{user?.email}}</h3>
+    </ion-item>
+
+    <ion-item *ngIf="userProfile">
+      <h2>[Dev] Profile</h2>
+      <h3>Name: {{userProfile?.name}}</h3>
+      <h3>Email: {{userProfile?.email}}</h3>
+      <h3>Type: {{accountTypes[userProfile?.type]}}</h3>
+    </ion-item>
+
+    <ion-item *ngIf="!userProfile">
+      <h2>[Dev] No profile</h2>
+    </ion-item>
+
+    <button ion-item (click)="updateProfile()">
+      [Dev] Update profile
+    </button>
+
+    <button ion-item (click)="changePassword()">
+      <ion-icon name="lock" item-start></ion-icon>
+      {{ 'button.change-password' | translate }}
+    </button>
+    <button ion-item (click)="deleteAccount()">
+      <ion-icon name="trash" item-start></ion-icon>
+      [Dev] Delete account
+    </button>
+    <button ion-item (click)="unsetAccountType()">
+      <ion-icon name="trash" item-start></ion-icon>
+      [Dev] Unset account type
+    </button>
+    <button ion-item (click)="logout()">
+      <ion-icon name="log-out" item-start></ion-icon>
+      {{ 'button.logout' | translate }}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      <!-- ??? String -->
+      [T] Privacy
+    </ion-list-header>
+
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        <!-- ??? String -->
+        [T] Save locations
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      {{ 'text.notifications' | translate }}
+    </ion-list-header>
+
+    <ion-item>
+      <ion-toggle checked="true"></ion-toggle>
+      <ion-label>
+        <!-- ??? String -->
+        [T] Push notification
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      {{ 'text.language' | translate }}
+    </ion-list-header>
+
+    <button ion-item (click)="openLanguageSelector($event)">
+      {{language}}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      {{ 'text.version' | translate }}
+    </ion-list-header>
+
+    <ion-item text-wrap>>
+      [Dev] Platforms: {{platforms}}
+    </ion-item>
+
+    <ion-item>
+      [Dev] App Name: {{appVersion}}
+    </ion-item>
+
+    <ion-item>
+      {{ 'text.app-version' | translate }}: {{appVersion}}
+    </ion-item>
+
+    <ion-item>
+      {{ 'text.client-version' | translate }}: {{clientVersion}}
+    </ion-item>
+
+    <ion-item>
+      [Dev] Server Version: {{serverVersion}}
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      {{ 'text.support' | translate }}
+    </ion-list-header>
+    <button ion-item (click)="openSupport()">
+      <ion-icon name="help-circle" item-start></ion-icon>
+      {{ 'text.faq' | translate }}
+    </button>
+    <button ion-item (click)="sendFeedback()">
+      <ion-icon name="mail" item-start></ion-icon>
+      {{ 'text.feedback' | translate }}
+    </button>
+    <button ion-item (click)="rateApp()">
+      <ion-icon name="star" item-start></ion-icon>
+      {{ 'text.rate-app' | translate }}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      [Dev] Development
+    </ion-list-header>
+    <button ion-item (click)="openDeveloperPage()">
+      <ion-icon name="construct" item-start></ion-icon>
+      [Dev] Developer
+    </button>
+    <button ion-item (click)="openLog()">
+      <ion-icon name="paper" item-start></ion-icon>
+      [Dev] View Log
+    </button>
+  </ion-list>
+</ion-content>

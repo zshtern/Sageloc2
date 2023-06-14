@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        {{ 'button.close' | translate }}
+      </button>
+    </ion-buttons>
+    <ion-title>
+      {{ 'page.select-language.title' | translate }}
+    </ion-title>
+  </ion-navbar>
+  <!--<ion-toolbar>-->
+    <!--<ion-searchbar (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar>-->
+  <!--</ion-toolbar>-->
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="selectLanguage(language)" detail-none *ngFor="let language of languages">
+      {{language.name}} - {{ language.id | translate }}
+    </button>
+  </ion-list>
+</ion-content>

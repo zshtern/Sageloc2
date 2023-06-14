@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.registration.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid padding class="full-height">
+    <ion-row>
+      <ion-col text-center>
+        <h5 ion-text>{{ 'page.registration.header' | translate }}</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list no-margin>
+          <ion-item no-padding>
+            <ion-input type="email" [(ngModel)]="form.email" name="name"
+                       placeholder="{{ 'text.email' | translate }}"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding>
+            <ion-input type="password" [(ngModel)]="form.password" name="password"
+                       placeholder="{{ 'text.password' | translate }}"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block icon-start color="primary" (click)="registerWithEmail()">
+          {{ 'button.sign-up' | translate }}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        {{ 'text.or' | translate }}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button margin-bottom ion-button block icon-start color="apple" (click)="registerWith('apple-id')">
+          <ion-icon name="logo-apple"></ion-icon>
+          {{ 'button.sign-up-with-apple-id' | translate }}
+        </button>
+
+        <button margin-bottom ion-button block icon-start color="facebook" (click)="registerWith('facebook')">
+          <ion-icon name="logo-facebook"></ion-icon>
+          {{ 'button.sign-up-with-facebook' | translate }}
+        </button>
+
+        <button margin-bottom ion-button block icon-start color="google" (click)="registerWith('google')">
+          <ion-icon name="logo-google"></ion-icon>
+          {{ 'button.sign-up-with-google' | translate }}
+        </button>
+
+        <button margin-bottom ion-button block color="light" (click)="openLoginPage()">
+          {{ 'button.use-existed-account' | translate }}
+        </button>
+
+        <button margin-bottom ion-button block color="light" (click)="openDeveloperPage()">
+          [Dev] Developer
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
