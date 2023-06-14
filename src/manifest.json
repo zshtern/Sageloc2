@@ -1,0 +1,11 @@
+{
+  "name": "Sageloc",
+  "short_name": "Sageloc Application",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

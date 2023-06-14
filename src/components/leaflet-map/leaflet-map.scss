@@ -1,0 +1,16 @@
+
+leaflet-map {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  .leaflet-map-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .friend-marker{
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+}
