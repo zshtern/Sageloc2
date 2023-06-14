@@ -1,0 +1,124 @@
+{
+  "app-name": "Sageloc",
+  "welcome": "(D) Welcome",
+  "select-language": "(D) Select Language",
+  "select-language-text": "(D) Please select the language of application:",
+  "hello": "(D) hello {{value}}",
+  "next": "(D) Next",
+  "page": {
+    "welcome": {
+      "title": "Привет",
+      "header": "Поздравляем",
+      "text": "Вы установили приложение Sageloc. Ещё пара шагов и вы будете на безопасной стороне!"
+    },
+    "login": {
+      "title": "Вход",
+      "header": "Ваш e-mail и пароль"
+    },
+    "registration": {
+      "title": "Регистрация",
+      "header": "Введите e-mail и пароль"
+    },
+    "select-account": {
+      "title": "Аккаунт",
+      "text": "Выберите тип аккаунта"
+    },
+    "select-language": {
+      "title": "Выберите язык"
+    },
+    "add-child": {
+      "title": "Добавить ребенка",
+      "enter-code": "Введите код с устройства ребенка ниже:",
+      "share-code": "Введите следуюший код на устройстве родителя."
+    },
+    "add-parent": {
+      "title": "Добавить родителя",
+      "enter-code": "Введите код с устройства родителя ниже:",
+      "share-code": "Введите следуюший код на устройстве ребенка."
+    },
+    "child-location": {
+      "title": "Локация",
+      "text": "Для полноценной работы приложению требуется доступ к данных о геолокации данного устройства."
+    },
+    "child-home": {
+      "title": "Ребенок",
+      "text": "We need permission to receive location updates in background."
+    },
+    "map": {
+      "title": "Карта"
+    },
+    "routes": {
+      "title": "Маршруты"
+    },
+    "friends": {
+      "title": "Друзья"
+    },
+    "settings": {
+      "title": "Настройки"
+    },
+    "title": {
+      "welcome": "(D) Welcome",
+      "dev": "(D) Developer Features",
+      "settings": "(D) Settings"
+    }
+  },
+  "button": {
+    "back": "Назад",
+    "next": "Далее",
+    "skip": "Пропустить",
+    "close": "Закрыть",
+    "login": "Войти",
+    "logout": "Выйти",
+    "login-with-apple-id": "Вход через Apple ID",
+    "login-with-facebook": "Вход через Facebook",
+    "login-with-google": "Вход через Google",
+    "forgot-password": "Забыл пароль?",
+    "sign-up": "Зарегистрироваться",
+    "sign-up-with-apple-id": "Регистрация через Apple ID",
+    "sign-up-with-facebook": "Регистрация через Facebook",
+    "sign-up-with-google": "Регистрация через Google",
+    "create-new-account": "Создать аккаунт",
+    "use-existed-account": "У меня есть аккаунт",
+    "share-code": "Отправить",
+    "add-route": "Добавить маршрут"
+  },
+  "component": {
+    "language-selector": {
+      "title": "(D) Select Language"
+    }
+  },
+  "error": {
+    "unknown": "{{message}}",
+    "invalid-email-or-password" : "Неверно указан адрес электронной почты или пароль.",
+    "short-password" : "Слишком короткий пароль."
+  },
+  "text": {
+    "or": "или",
+    "account": "Аккаунт",
+    "name": "Имя",
+    "email": "Эл. почта",
+    "password": "Пароль",
+    "confirm-password": "Подтвертить пароль",
+    "parent": "Взрослый",
+    "child": "Ребенок",
+    "yes": "Да",
+    "no": "Нет",
+    "enter-code": "Введите код",
+    "no-routes": "Нет маршрутов"
+  },
+  "alert": {
+    "confirm-age": {
+      "title": "Подтверждение возраста",
+      "message": "Вы подтверждаете, что вы совершеннолетний?"
+    }
+  },
+  "tabs": {
+    "map": "Карта",
+    "routes": "Маршруты",
+    "friends": "Друзья",
+    "settings": "Настройки"
+  },
+  "en": "English",
+  "he": "עברית",
+  "ru": "Русский"
+}

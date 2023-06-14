@@ -1,0 +1,52 @@
+<ion-menu [content]="appContent" id="left" persistent="true" (ionOpen)="onMenuOpen()" (ionClose)="onMenuClose()"
+          swipeEnabled="false">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item (click)="signOut()">
+        sign out
+      </button>
+      <button menuClose ion-item (click)="showLog()">
+        [dev] show log
+      </button>
+      <button menuClose ion-item (click)="showHomePage()">
+        [dev] show home
+      </button>
+      <button menuClose ion-item (click)="showLeafletMapPage()">
+        [dev] show leaflet map
+      </button>
+      <button menuClose ion-item (click)="showMapBoxPage()">
+        [dev] show mapbox
+      </button>
+      <button menuClose ion-item (click)="selectPathPage()">
+        [dev] select path
+      </button>
+      <button menuClose ion-item (click)="showLocationPage()">
+        [dev] check location
+      </button>
+      <button menuClose ion-item (click)="openIonicPage('WelcomePage')">
+        [dev] introduction
+      </button>
+      <button menuClose ion-item (click)="openIonicPage('CordovaPluginsPage')">
+        [dev] cordova plugins
+      </button>
+      <button menuClose ion-item (click)="openIonicPage('WebInterfacesPage')">
+        [dev] web apis
+      </button>
+      <button menuClose ion-item (click)="openIonicPage('AngularFire2Page')">
+        [dev] Angular Fire 2
+      </button>
+      <button menuClose ion-item (click)="openIonicPage('ForkPage')">
+        Back to Version Selection
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #appContent [root]="rootPage" swipeBackEnabled="false"></ion-nav>
+

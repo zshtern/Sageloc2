@@ -1,0 +1,139 @@
+{
+  "app-name": "Sageloc",
+  "welcome": "(D) Welcome",
+  "select-language": "(D) Select Language",
+  "select-language-text": "(D) Please select the language of application:",
+  "hello": "(D) hello {{value}}",
+  "next": "(D) Next",
+  "page": {
+    "welcome": {
+      "title": "Welcome",
+      "header": "Congratulations",
+      "text": "You have installed Sageloc application. Just a few steps and you will be on the safe side!"
+    },
+    "login": {
+      "title": "Login",
+      "header": "Login with email and password"
+    },
+    "forgot-password": {
+      "title": "Reset Password"
+    },
+    "registration": {
+      "title": "Registration",
+      "header": "Sign up with email and password"
+    },
+    "select-account": {
+      "title": "Account",
+      "text": "Please select who will use this application. \"Adult\" can supervise \"Child\"."
+    },
+    "select-language": {
+      "title": "Select Language"
+    },
+    "add-child": {
+      "title": "Add Child",
+      "enter-code": "If you like to connect this device to parent account please enter the code from parent device in here:",
+      "share-code": "Enter the code below on parent device:"
+    },
+    "add-parent": {
+      "title": "Add Parent",
+      "enter-code": "If you like to connect this device to child account please enter the code from child device in here:",
+      "share-code": "Enter the code below on child device:"
+    },
+    "child-location": {
+      "title": "Location",
+      "text": "Application needs a permission to receive location updates in background."
+    },
+    "child-home": {
+      "title": "Child",
+      "text": "We need permission to receive location updates in background."
+    },
+    "map": {
+      "title": "Map"
+    },
+    "routes": {
+      "title": "Routes"
+    },
+    "friends": {
+      "title": "Friends"
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "title": {
+      "welcome": "(D) Welcome",
+      "dev": "(D) Developer Features",
+      "settings": "(D) Settings"
+    }
+  },
+  "button": {
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "close": "Close",
+    "login": "Log In",
+    "logout": "Log Out",
+    "login-with-apple-id": "Login with Apple ID",
+    "login-with-facebook": "Login with Facebook",
+    "login-with-google": "Login with Google",
+    "forgot-password": "Forgot Password",
+    "sign-up": "Sign Up",
+    "sign-up-with-apple-id": "Sign Up with Apple ID",
+    "sign-up-with-facebook": "Sign Up with Facebook",
+    "sign-up-with-google": "Sign Up with Google",
+    "create-new-account": "Create New Account",
+    "use-existed-account": "Use Existed Account",
+    "share-code": "Share Code",
+    "add-route": "Add route",
+    "change-password": "Change password"
+  },
+  "component": {
+    "language-selector": {
+      "title": "(D) Select Language"
+    }
+  },
+  "error": {
+    "unknown": "{{message}}",
+    "invalid-email-or-password": "Invalid email or password.",
+    "short-password": "Password is too short.",
+    "empty-mail": "Empty email.",
+    "different-passwords": "Different passwords"
+  },
+  "text": {
+    "or": "or",
+    "account": "Account",
+    "name": "Name",
+    "email": "E-mail",
+    "password": "Password",
+    "confirm-password": "Confirm Password",
+    "parent": "Parent",
+    "child": "Child",
+    "yes": "Yes",
+    "no": "No",
+    "enter-code": "Enter the code here",
+    "no-routes": "No routes",
+    "notifications": "Notifications",
+    "language": "Language",
+    "version": "Version",
+    "app-version": "App Version",
+    "client-version": "Client Version",
+    "support": "Support",
+    "faq": "F.A.Q.",
+    "feedback": "Feedback",
+    "rate-app": "Rate App"
+  },
+  "alert": {
+    "confirm-age": {
+      "title": "Confirm age",
+      "message": "Do you confirm that you are an adult?"
+    }
+  },
+  "tabs": {
+    "map": "Map",
+    "routes": "Routes",
+    "friends": "Friends",
+    "settings": "Settings"
+  },
+  "en": "English",
+  "he": "עברית",
+  "ru": "Русский"
+}

@@ -1,0 +1,31 @@
+{
+  "app-name": "Sageloc",
+  "welcome": "שלום",
+  "select-language": "בחר שפה:",
+  "select-language-text" : "Please select the language of application:",
+  "hello": "hello {{value}}",
+  "next": "Next",
+  "page": {
+    "welcome": {
+      "title": "שלום",
+      "header": "מזל טוב",
+      "text": "התקנת את היישום Sageloc. רק כמה צעדים ואתה תהיה בצד בטוח!"
+    },
+    "title": {
+      "welcome": "Welcome",
+      "dev": "Developer Features",
+      "settings": "Settings"
+    }
+  },
+  "button": {
+    "next": "הבא"
+  },
+  "component": {
+    "language-selector": {
+      "title": "Select Language"
+    }
+  },
+  "en": "English",
+  "he": "עברית",
+  "ru": "Русский"
+}
