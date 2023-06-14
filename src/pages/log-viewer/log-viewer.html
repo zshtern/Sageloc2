@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        Close
+      </button>
+    </ion-buttons>
+    <ion-title>LogViewer</ion-title>
+  </ion-navbar>
+  <ion-searchbar
+    [(ngModel)]="selectedLogModule"
+    (ionInput)="onModuleInput($event)">
+  </ion-searchbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedLogLevel" color="secondary" (ionChange)="onLevelChanged($event)">
+      <ion-segment-button *ngFor="let level of levels" value="{{level.id}}">
+        {{level.name}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div text-center>
+    <small>Total number of messages in the log: {{total}}</small>
+  </div>
+  <ion-list no-padding>
+    <ion-item no-padding text-wrap *ngFor="let message of messages">
+      <small>{{message.text}}</small>
+    </ion-item>
+  </ion-list>
+</ion-content>

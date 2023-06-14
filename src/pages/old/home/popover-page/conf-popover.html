@@ -1,0 +1,9 @@
+<ion-list>
+    <!--<ion-list-header></ion-list-header>-->
+    <button *ngIf="!isScan" ion-item (click)="startScan()">Scan for Friends</button>
+    <button *ngIf="isScan" ion-item (click)="stopScan()">Stop Scanning</button>
+    <button ion-item (click)="findFriend()">Find Friend</button>
+    <button ion-item (click)="newPath()">New Path</button>
+    <button ion-item (click)="tagPlace()">Tag Place</button>
+    <button ion-item (click)="followPath()">Follow Path</button>
+</ion-list>

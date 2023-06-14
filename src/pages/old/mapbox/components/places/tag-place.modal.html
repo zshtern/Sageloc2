@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tag current place
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button showWhen="ios" (click)="closeModal()">
+        <span ion-text color="primary">Cancel</span>
+      </button>
+      <button ion-button icon-only hideWhen="ios" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" block>Add</button>
+  </form>
+</ion-content>

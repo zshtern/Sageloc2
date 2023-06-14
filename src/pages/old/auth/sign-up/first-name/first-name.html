@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Tell us your First Name
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="sign-up-first-name page-container no-scroll">
+    <div class="page-content">
+        <div class="logo">
+            <div class="logo-icon">
+            </div>
+        </div>
+        <form (ngSubmit)="next()" #ngForm="ngForm">
+            <ion-list>
+                <ion-item>
+                    <ion-label floating>First Name</ion-label>
+                    <ion-input #firstName
+                               type="text"
+                               required
+                               [(ngModel)]="form.firstName"
+                               name="firstName">
+                    </ion-input>
+                </ion-item>
+            </ion-list>
+            <button ion-button
+                    block
+                    [disabled]="!ngForm.form.valid"
+                    class="sign-up-btn md">
+                Next
+            </button>
+        </form>
+    </div>
+
+</ion-content>

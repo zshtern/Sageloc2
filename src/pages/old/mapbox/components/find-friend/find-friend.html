@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Insert Email
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button showWhen="ios" (click)="closeModal()">
+        <span ion-text color="primary">Cancel</span>
+      </button>
+      <button ion-button icon-only hideWhen="ios" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()" #emailForm="ngForm">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required email="true"></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" block [disabled]="!emailForm.form.valid">
+      Find
+    </button>
+  </form>
+</ion-content>

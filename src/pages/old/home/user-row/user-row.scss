@@ -1,0 +1,25 @@
+.user-row-item {
+  ion-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ion-icon {
+    margin-right: 5px;
+  }
+  .connection-sent {
+    .text {
+      font-size: 1.2rem;
+    }
+  }
+
+  .connection-approved {
+    .text {
+      font-size: 1.2rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}

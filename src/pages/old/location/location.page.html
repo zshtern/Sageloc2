@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            Check Background Location
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="location-page page-container-x">
+    <div class="page-content-x">
+        <ion-list>
+            <ion-list-header>
+                Actions
+            </ion-list-header>
+            <button ion-item (click)="startTracking()">Start Tracking</button>
+            <button ion-item (click)="stopTracking()">Stop Tracking</button>
+            <ion-list-header>
+                Positions
+            </ion-list-header>
+            <ion-item *ngFor="let messages of log">
+                {{messages}}
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

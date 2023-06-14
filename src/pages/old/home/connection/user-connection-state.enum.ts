@@ -1,0 +1,8 @@
+export enum CONNECTION_STATE  {
+    NONE = 0,
+    CONNECTING = 1,
+    CONNECTION_APPROVE = 2,
+    CONNECTION_DENY = 3
+
+}
+

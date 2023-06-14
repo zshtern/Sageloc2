@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle="left">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      LOG
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="log-page">
+  <ion-list>
+    <div ion-item *ngFor="let item of log;let i=index">
+      <ion-row style="font-size: 12px">
+        <ion-col col-1>
+          {{i}}
+        </ion-col>
+        <ion-col col-2>
+          {{item.date}}
+        </ion-col>
+        <ion-col col-9>
+          <b>{{ item.data.text }}</b>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="buttons-f">
+      <button ion-button (click)="getLog(true)">Get Log</button>
+      <button ion-button (click)="deleteLog()">Delete Log</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

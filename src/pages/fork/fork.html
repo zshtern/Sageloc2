@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Select Version</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="full-height">
+    <ion-row justify-content-center align-items-center class="full-height" style="align-content: center;">
+      <ion-col col-12 col-md-6 text-center>
+        <button ion-button block color="secondary" (click)="openOldVersion()">Old Version</button>
+      </ion-col>
+      <ion-col col-12 col-md-6 text-center>
+        <button ion-button block color="danger" (click)="openNewVersion()">New Version</button>
+      </ion-col>
+      <ion-col col-12 col-md-6 text-center>
+        <button ion-button block color="light" (click)="openRoutePlayground()">Route Playground</button>
+      </ion-col>
+      <ion-col col-12 col-md-6 text-center>
+        <button ion-button block color="light" (click)="openCordovaPlayground()">Cordova Playground</button>
+      </ion-col>
+      <ion-col col-12 col-md-6 text-center>
+        <button ion-button block color="light" (click)="openWebPlayground()">Web Playground</button>
+      </ion-col>
+      <ion-col col-12 col-md-6 text-center>
+        <button ion-button block color="light" (click)="openFirebasePlayground()">Firebase Playground</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

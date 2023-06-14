@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Sign Up with Email
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="sign-up background page-container">
+    <div class="page-content">
+        <div class="logo">
+            <div class="logo-icon">
+                LOGO
+            </div>
+        </div>
+
+        <form (ngSubmit)="register()" #signUpForm="ngForm">
+            <ion-list>
+                <ion-item>
+                    <ion-label floating>E-mail</ion-label>
+                    <ion-input type="text" [(ngModel)]="form.email" name="name"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Password</ion-label>
+                    <ion-input type="password" [(ngModel)]="form.password" name="password"></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <button ion-button block [disabled]="!signUpForm.form.valid" class="sign-up-btn">Sign Up</button>
+
+            <div padding class="error" *ngIf="error">
+                <p>{{error}}</p>
+            </div>
+        </form>
+    </div>
+
+</ion-content>

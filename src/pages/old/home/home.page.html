@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button>
+                <ion-icon name="contact"></ion-icon>
+            </button>
+        </ion-buttons>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            Sageloc
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="openPopOverMenu($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="home-page no-scroll" no-bounce>
+    <div class="map-container-full" [ngClass]="{'map-container-70':showUsers,'map-container-90':showPathControls}">
+        <live-google-map (init)="onMapInit($event)"></live-google-map>
+    </div>
+
+
+    <ion-list class="user-list" *ngIf="showUsers">
+        <ion-list-header> Users:</ion-list-header>
+        <div *ngFor="let user of users">
+            <user-row [user]="user"
+                      (connect)="sendConnectUserRequest($event)"
+                      (routeCalc)="onRouteCalc($event)">
+            </user-row>
+        </div>
+    </ion-list>
+
+    <ion-grid class="path-controls" *ngIf="showPathControls">
+        <ion-row>
+            <ion-col>
+                <button ion-button color="danger" outline (click)="cancelPathCalc()">
+                    Cancel
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button (click)="donePathCalc()">
+                    Done
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col padding class="logo" text-center>
+        <sgl-title-logo></sgl-title-logo>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form (ngSubmit)="login()" #loginForm="ngForm">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="mail" item-start></ion-icon>
+              <ion-label color="primary" stacked>E-mail</ion-label>
+              <ion-input type="text" [(ngModel)]="form.email" name="name" placeholder="E-mail"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-icon name="lock" item-start></ion-icon>
+              <ion-label color="primary" stacked>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="form.password" name="password" placeholder="Password"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <button ion-button type="submit" color="primary" block [disabled]="!loginForm.form.valid">
+            Log In
+          </button>
+
+          <div padding-vertical ion-text color="danger" *ngIf="error">
+            {{error}}
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="light" block (click)="openForgotPasswordPage()">Forgot Password</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="light" block (click)="openSignUpPage()">Sign Up</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block icon-start class="facebook-btn" (click)="loginUserWithFacebook()">
+          <ion-icon name="logo-facebook"></ion-icon>
+          Log In with Facebook
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block icon-start class="google-btn" (click)="loginUserWithGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+          Log In with Google+
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isDevMode">
+      <ion-col>
+        <button ion-button block color="light" (click)="openDevPage()">
+          I am a developer!
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

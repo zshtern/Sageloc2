@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ 'page.friends.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding color="light" class="outer-content">
+  <ion-list>
+    <ion-list-header>Children</ion-list-header>
+
+    <ion-item *ngFor="let child of children" (click)="openChild(child)">
+      <ion-avatar item-start>
+        <img [src]="child.avatar">
+      </ion-avatar>
+      <h2>{{child.name}}</h2>
+      <p>Location: {{child.location}}</p>
+      <p>Battery: {{child.battery}}</p>
+      <ion-note item-end>{{child.updated}}</ion-note>
+    </ion-item>
+    <ion-item *ngIf="children.length === 0">
+      No Added Children
+    </ion-item>
+    <ion-item *ngIf="children.length === 0">
+      <ion-avatar item-start>
+        <img [src]="demoChild.avatar">
+      </ion-avatar>
+      <h2>{{demoChild.name}}</h2>
+      <p>Location: {{demoChild.location}}</p>
+      <p>Battery: {{demoChild.battery}}</p>
+      <ion-note item-end>{{demoChild.updated}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="openAddChild()">Add Child</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

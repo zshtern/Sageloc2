@@ -1,0 +1,37 @@
+<ion-item-sliding>
+    <ion-item class="user-row-item">
+        <ion-avatar item-left>
+            <img src="assets/img/man.png">
+        </ion-avatar>
+        <h2>{{user.firstName}} - {{user.lastName}}</h2>
+        <!--<h2>{{user.displayName}}</h2>-->
+
+
+        <button ion-button color="primary" icon-right (click)="onConnect()" *ngIf="0 == user.connectionState">
+            <ion-icon name="contacts"></ion-icon>
+            Connect
+        </button>
+
+        <div class="connection-sent" *ngIf="1 == user.connectionState">
+            <span class="text">Request Sent</span>
+            <!--<gl-loader></gl-loader>-->
+        </div>
+
+
+        <div class="connection-approved" *ngIf="2 == user.connectionState">
+            <span class="text">Request Approved</span>
+            <button ion-button color="primary"  (click)="createNewPath()" icon-left>
+                <ion-icon name="ios-more"></ion-icon>
+                New Path
+            </button>
+        </div>
+
+
+    </ion-item>
+    <ion-item-options>
+        <button ion-button color="light" icon-left>
+            <ion-icon name="ios-more"></ion-icon>
+            More
+        </button>
+    </ion-item-options>
+</ion-item-sliding>

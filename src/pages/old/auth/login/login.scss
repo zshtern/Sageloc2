@@ -1,0 +1,100 @@
+login-page.ion-page {
+  .logo {
+    img {
+      height: 128px;
+    }
+  }
+
+  sgl-title-logo {
+    font-size: 40px;
+  }
+
+  .facebook-btn {
+    background-color: $facebook-color;
+  }
+
+  .google-btn {
+    background-color: $google-color;
+  }
+}
+
+// Limit max width of login page for better experience of wide screens.
+// https://forum.ionicframework.com/t/how-to-limit-ionic-app-width/96785/4
+@media (min-width: 500px) {
+  login-page.ion-page {
+    background-color: $background-color;
+    .grid {
+      width: 500px;
+      margin: auto;
+      position: relative;
+    }
+  }
+
+  //.scroll-content {
+  //  overflow-y:auto;
+  //}
+}
+
+.login-email {
+
+  .links {
+    width: 100%;
+
+    .forgot-password-link {
+      width: 50%;
+    }
+    .sign-up-link {
+      width: 50%;
+    }
+    button {
+      //background: transparent;
+      //color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .social-login-container {
+    margin-top: 10rem;
+    width: 100%;
+    .facebook-btn {
+      background-color: #3b5998;
+      width: 95%;
+      margin: auto auto 5px;
+    }
+
+    .google-btn {
+      background-color: #d34836;
+      width: 95%;
+      margin: auto auto 5px;
+    }
+    .text {
+      margin-left: 1rem;
+    }
+  }
+
+  form {
+    width: 95%;
+
+    .item {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .log-in-btn {
+      background-color: rgb(74, 165, 217);
+      width: 100%;
+      color: white;
+    }
+  }
+
+  .error {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(217, 74, 87);
+    p {
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            Ionic2 Leaflet Demo
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content [attr.noScroll]="false">
+    <div leaflet style="height: 100%; width: 100%"
+         [leafletCenter]="mapCenter"
+         (leafletMapReady)="onMapReady($event)"
+         [leafletOptions]="leafletOptions">
+
+    </div>
+
+    <!--<div class="lmap">-->
+    <!--<div leaflet style="height: 100%;" [leafletOptions]="leafletOptions"></div>-->
+    <!--</div>-->
+</ion-content>

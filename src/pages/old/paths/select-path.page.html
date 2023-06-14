@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button>
+                <ion-icon name="contact"></ion-icon>
+            </button>
+        </ion-buttons>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            Sageloc
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="select-path-page no-scroll" no-bounce>
+
+
+    <ion-item>
+        <ion-label>Select Path</ion-label>
+        <ion-select [(ngModel)]="selectedPath" (ionChange)="onPathSelect()">
+            <ion-option *ngFor="let path of paths" [value]="path">{{path.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <div class="map-container-full">
+        <div id={{mapId}} style="width: 100%;height: 100%"></div>
+    </div>
+</ion-content>

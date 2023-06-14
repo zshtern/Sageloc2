@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Tell us your Email!
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="sign-up-email page-container no-scroll">
+    <div class="page-content">
+        <div class="logo">
+            <div class="logo-icon test">
+            </div>
+        </div>
+        <form (ngSubmit)="next()" #emailForm="ngForm">
+            <ion-list class="form-list">
+                <ion-item>
+                    <ion-label floating>E-mail</ion-label>
+                    <ion-input
+                            #email
+                            required
+                            [(ngModel)]="form.email"
+                            name="email">
+                    </ion-input>
+                </ion-item>
+            </ion-list>
+            <button ion-button block [disabled]="!emailForm.form.valid" class="sign-up-btn">Next</button>
+        </form>
+    </div>
+
+</ion-content>
